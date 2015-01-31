@@ -2,7 +2,7 @@
 ========
 
 ## Requisites
-- Java
+- Java (version 1.6.0_51)
 - Gradle
 - Preferred IDE/Text editor
 - Internet connection
