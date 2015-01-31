@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.calculator.test.operator.OperatorSetTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2015-01-31T19:50:21" hostname="mc-s071130.local" time="0.0060">
+  <properties/>
+  <testcase name="testGetReturnsAddOperator" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <testcase name="testGetReturnsSubtractOperator" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <testcase name="testGetReturnsMultiplyOperator" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <testcase name="testGetReturnsDivideOperator" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <testcase name="testGetReturnsIncrementOperator" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <testcase name="testGetReturnsApplyOperator" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <testcase name="testGetReturnsCaseInsensitive" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <testcase name="testGetThrowsException" classname="com.calculator.test.operator.OperatorSetTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
