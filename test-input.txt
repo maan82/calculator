@@ -2,6 +2,6 @@ add 3
 add 2
 subtract 1
 multiply 3
-divide 2
+divide 2.5
 increment
 apply 4

@@ -22,7 +22,7 @@ public class AppRunnerTest {
         String expected = "-----Input instructions----" +
             lineSeparator+"[add 3, apply 4]" +
             lineSeparator+"-----Result------" +
-            lineSeparator+"7.0" +
+            lineSeparator+"7" +
             lineSeparator;
         assertThat(output.toString(), is(expected));
     }

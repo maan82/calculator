@@ -3,20 +3,21 @@ package com.calculator.test;
 import com.calculator.test.operator.Apply;
 import com.calculator.test.operator.Operator;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Instruction {
-    private List<Double> operands;
+    private List<BigDecimal> operands;
     private Operator operator;
 
-    public Instruction(List<Double> operands, Operator operator) {
+    public Instruction(List<BigDecimal> operands, Operator operator) {
         this.operands = operands;
         this.operator = operator;
     }
 
-    public Double execute(Double result) {
-        ArrayList<Double> allOperands = new ArrayList<Double>();
+    public BigDecimal execute(BigDecimal result) {
+        ArrayList<BigDecimal> allOperands = new ArrayList<BigDecimal>();
         allOperands.add(result);
         allOperands.addAll(operands);
         return operator.operate(allOperands);
@@ -26,7 +27,7 @@ public class Instruction {
         return operator instanceof Apply;
     }
 
-    public Double getOperand() {
+    public BigDecimal getOperand() {
         return operands.get(0);
     }
 
@@ -38,7 +39,7 @@ public class Instruction {
         Instruction that = (Instruction) o;
 
         if (!operands.equals(that.operands)) return false;
-        if (!operator.equals(that.operator)) return false;
+        if (!operator.getClass().equals(that.operator.getClass())) return false;
 
         return true;
     }
@@ -46,7 +47,7 @@ public class Instruction {
     @Override
     public int hashCode() {
         int result = operands.hashCode();
-        result = 31 * result + operator.hashCode();
+        result = 31 * result + operator.getClass().hashCode();
         return result;
     }
 }

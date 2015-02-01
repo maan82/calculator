@@ -1,6 +1,7 @@
 package com.calculator.test.operator;
 
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -15,5 +16,5 @@ public interface Operator {
      * @param operands operands of the operation
      * @return result of binary operator
      */
-    public Double operate(List<Double> operands);
+    public BigDecimal operate(List<BigDecimal> operands);
 }

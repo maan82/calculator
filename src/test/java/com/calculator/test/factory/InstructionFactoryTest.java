@@ -1,36 +1,29 @@
 package com.calculator.test.factory;
 
 import com.calculator.test.Instruction;
-import com.google.common.collect.Lists;
 import com.calculator.test.operator.Add;
-import com.calculator.test.operator.OperatorSet;
 import com.calculator.test.operator.Subtract;
+import com.google.common.collect.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 public class InstructionFactoryTest {
-    @Mock
-    private OperatorSet operatorSet;
 
-    @InjectMocks
     private InstructionFactory instructionFactory = new InstructionFactory();
 
     @Test
     public void testCreateShouldCreateWhenOneLine() {
         ArrayList<String> lines = Lists.newArrayList("ADD 2");
         Add add = new Add();
-        List<Double> operands = Lists.newArrayList(2.0);
-        when(operatorSet.get("ADD")).thenReturn(add);
+        List<BigDecimal> operands = Lists.newArrayList(new BigDecimal(2));
         List<Instruction> expected = Lists.newArrayList(new Instruction(operands, add));
 
         List<Instruction> actual = instructionFactory.create(lines);
@@ -43,11 +36,9 @@ public class InstructionFactoryTest {
         ArrayList<String> lines = Lists.newArrayList("ADD 2", "SUBTRACT 3");
         Add add = new Add();
         Subtract subtract = new Subtract();
-        List<Double> operands1 = Lists.newArrayList(2.0);
-        List<Double> operands2 = Lists.newArrayList(3.0);
+        List<BigDecimal> operands1 = Lists.newArrayList(new BigDecimal(2));
+        List<BigDecimal> operands2 = Lists.newArrayList(new BigDecimal(3));
 
-        when(operatorSet.get("ADD")).thenReturn(add);
-        when(operatorSet.get("SUBTRACT")).thenReturn(subtract);
         List<Instruction> expected =
             Lists.newArrayList(new Instruction(operands1, add), new Instruction(operands2, subtract));
 

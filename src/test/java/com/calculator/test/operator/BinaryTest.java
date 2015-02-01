@@ -3,6 +3,7 @@ package com.calculator.test.operator;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import static org.hamcrest.core.Is.is;
@@ -12,40 +13,42 @@ public class BinaryTest {
 
     @Test
     public void testGetLeftHandSideOperand() {
-        Binary binaryOperator = new Binary("") {
+        Binary binaryOperator = new Binary() {
             @Override
-            public Double operate(Double left, Double right) {
+            public BigDecimal operate(BigDecimal left, BigDecimal right) {
                 return null;
             }
         };
-        ArrayList<Double> operands = Lists.newArrayList(10.0, 20.0);
+        BigDecimal expected = new BigDecimal(10);
+        ArrayList<BigDecimal> operands = Lists.newArrayList(expected, new BigDecimal(20));
 
-        assertThat(binaryOperator.getLeftHandSideOperand(operands), is(10.0));
+        assertThat(binaryOperator.getLeftHandSideOperand(operands), is(expected));
     }
 
     @Test
     public void testGetRightHandSideOperand() {
-        Binary binaryOperator = new Binary("") {
+        Binary binaryOperator = new Binary() {
             @Override
-            public Double operate(Double left, Double right) {
+            public BigDecimal operate(BigDecimal left, BigDecimal right) {
                 return null;
             }
         };
-        ArrayList<Double> operands = Lists.newArrayList(10.0, 20.0);
+        BigDecimal expected = new BigDecimal(20);
+        ArrayList<BigDecimal> operands = Lists.newArrayList(new BigDecimal(10), expected);
 
-        assertThat(binaryOperator.getRightHandSideOperand(operands), is(20.0));
+        assertThat(binaryOperator.getRightHandSideOperand(operands), is(expected));
     }
 
     @Test
     public void testOperateShouldDelegate() {
-        final Double expected = 30.0;
-        Binary binaryOperator = new Binary("") {
+        final BigDecimal expected = new BigDecimal(30);
+        Binary binaryOperator = new Binary() {
             @Override
-            public Double operate(Double left, Double right) {
+            public BigDecimal operate(BigDecimal left, BigDecimal right) {
                 return expected;
             }
         };
-        ArrayList<Double> operands = Lists.newArrayList(10.0, 20.0);
+        ArrayList<BigDecimal> operands = Lists.newArrayList(new BigDecimal(10), new BigDecimal(20));
 
         assertThat(binaryOperator.operate(operands), is(expected));
     }

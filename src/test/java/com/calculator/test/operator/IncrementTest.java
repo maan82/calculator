@@ -1,10 +1,11 @@
 package com.calculator.test.operator;
 
-import com.google.common.collect.Lists;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import java.math.BigDecimal;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class IncrementTest {
 
@@ -12,14 +13,10 @@ public class IncrementTest {
 
     @Test
     public void testOperateShouldAddOne() {
-        Double result = increment.operate(Lists.newArrayList(1.0));
-        assertThat(result, is(2.0));
-    }
+        BigDecimal operand = mock(BigDecimal.class);
+        increment.operate(operand);
 
-    @Test
-    public void testOperateWhenNegative() {
-        Double result = increment.operate(Lists.newArrayList(-1.0));
-        assertThat(result, is(0.0));
+        verify(operand).add(new BigDecimal(1));
     }
 
 }

@@ -1,18 +1,12 @@
 package com.calculator.test.operator;
 
-import java.util.List;
+import java.math.BigDecimal;
 
-public class Apply extends NamedOperator implements Operator {
-
-    public static final String APPLY = "APPLY";
-
-    public Apply() {
-        super(APPLY);
-    }
+public class Apply extends Unary implements Operator {
 
     @Override
-    public Double operate(List<Double> operands) {
-        return operands.get(operands.size() - 1);
+    public BigDecimal operate(BigDecimal operand) {
+        return operand;
     }
 
 }

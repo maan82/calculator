@@ -1,5 +1,6 @@
 package com.calculator.test;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Calculator {
@@ -9,20 +10,23 @@ public class Calculator {
         this.instructionList = instructionList;
     }
 
-    public Double calculate() {
+    public BigDecimal calculate() {
+        BigDecimal result = getInitialValue();
+        for (Instruction instruction: instructionList) {
+            if (instruction.isApplyInstruction()) {
+                break;
+            }
+            result = instruction.execute(result);
+        }
+        return result;
+    }
+
+    private BigDecimal getInitialValue() {
         Instruction lastInstruction = getLastInstruction();
         if (lastInstruction.isApplyInstruction()) {
-            Double result = lastInstruction.getOperand();
-            for (Instruction instruction: instructionList) {
-                if (instruction.isApplyInstruction()) {
-                    break;
-                }
-                result = instruction.execute(result);
-            }
-            return result;
-        } else {
-            throw new InvalidInputException("Last instruction should be apply instruction");
+            return lastInstruction.getOperand();
         }
+        throw new InvalidInputException("Last instruction should be apply instruction");
     }
 
     private Instruction getLastInstruction() {

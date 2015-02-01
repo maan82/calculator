@@ -1,16 +1,12 @@
 package com.calculator.test.operator;
 
+import java.math.BigDecimal;
+
 public class Add extends Binary implements Operator {
 
-    public static final String ADD = "ADD";
-
-    public Add() {
-        super(ADD);
-    }
-
     @Override
-    public Double operate(Double left, Double right) {
-        return left + right;
+    public BigDecimal operate(BigDecimal left, BigDecimal right) {
+        return left.add(right);
     }
 
 }

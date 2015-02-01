@@ -6,6 +6,7 @@ import com.calculator.test.operator.Subtract;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -16,19 +17,19 @@ public class CalculatorTest {
 
     @Test
     public void testCalculate() {
-        Instruction addInstruction = new Instruction(Lists.newArrayList(1.0), new Add());
-        Instruction subtractInstruction = new Instruction(Lists.newArrayList(4.0), new Subtract());
-        Instruction applyInstruction = new Instruction(Lists.newArrayList(4.0), new Apply());
+        Instruction addInstruction = new Instruction(Lists.newArrayList(new BigDecimal(1)), new Add());
+        Instruction subtractInstruction = new Instruction(Lists.newArrayList(new BigDecimal(4)), new Subtract());
+        Instruction applyInstruction = new Instruction(Lists.newArrayList(new BigDecimal(4)), new Apply());
         ArrayList<Instruction> instructions = Lists.newArrayList(addInstruction, subtractInstruction, applyInstruction);
 
         Calculator calculator = new Calculator(instructions);
 
-        assertThat(calculator.calculate(), is(1.0));
+        assertThat(calculator.calculate(), is(new BigDecimal(1)));
     }
 
     @Test
     public void testCalculateShouldThrowExceptionWhenInstructionsNotComplete() {
-        Instruction addInstruction = new Instruction(Lists.newArrayList(1.0), new Add());
+        Instruction addInstruction = new Instruction(Lists.newArrayList(new BigDecimal(1)), new Add());
         ArrayList<Instruction> instructions = Lists.newArrayList(addInstruction);
         try {
             new Calculator(instructions).calculate();

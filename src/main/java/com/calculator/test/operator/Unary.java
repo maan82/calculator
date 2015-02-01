@@ -1,21 +1,18 @@
 package com.calculator.test.operator;
 
+import java.math.BigDecimal;
 import java.util.List;
 
-public abstract class Unary extends NamedOperator implements Operator {
+public abstract class Unary implements Operator {
 
-    public Unary(String name) {
-        super(name);
-    }
-
-    public Double getOperand(List<Double> operands) {
+    public BigDecimal getOperand(List<BigDecimal> operands) {
         return operands.get(operands.size() -1);
     }
 
     @Override
-    public Double operate(List<Double> operands) {
+    public BigDecimal operate(List<BigDecimal> operands) {
         return operate(getOperand(operands));
     }
 
-    public abstract Double operate(Double operand);
+    public abstract BigDecimal operate(BigDecimal operand);
 }

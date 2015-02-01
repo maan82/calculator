@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.calculator.test.InputLinesReaderTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-01-31T19:50:20" hostname="mc-s071130.local" time="0.0030">
+<testsuite name="com.calculator.test.InputLinesReaderTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-02-01T19:07:01" hostname="mc-s071130.local" time="0.0040">
   <properties/>
   <testcase name="testReadLinesShouldCreateListWhenOneLine" classname="com.calculator.test.InputLinesReaderTest" time="0.0"/>
-  <testcase name="testReadLinesShouldThrowInvalidInputExceptionWhenException" classname="com.calculator.test.InputLinesReaderTest" time="0.0010"/>
+  <testcase name="testReadLinesShouldThrowInvalidInputExceptionWhenException" classname="com.calculator.test.InputLinesReaderTest" time="0.0"/>
   <testcase name="testReadLinesShouldCreateListWhenManyLines" classname="com.calculator.test.InputLinesReaderTest" time="0.0"/>
   <testcase name="testReadLinesShouldCreateListWhenSlashNInLineSeparator" classname="com.calculator.test.InputLinesReaderTest" time="0.0"/>
   <testcase name="testReadLinesShouldCreateListWhenCarriageReturnInLineSeparator" classname="com.calculator.test.InputLinesReaderTest" time="0.0"/>

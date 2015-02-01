@@ -2,51 +2,50 @@ package com.calculator.test.operator;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-public class OperatorSetTest {
-    private OperatorSet operatorSet = new OperatorSet();
+public class OperatorNameTest {
 
     @Test
-    public void testGetReturnsAddOperator() {
-        assertEquals(operatorSet.get("ADD"), new Add());
+    public void testGetReturnsAdd() {
+        assertTrue(OperatorName.get("ADD") instanceof Add);
     }
 
     @Test
     public void testGetReturnsSubtractOperator() {
-        assertEquals(operatorSet.get("SUBTRACT"), new Subtract());
+        assertTrue(OperatorName.get("SUBTRACT") instanceof Subtract);
     }
 
     @Test
     public void testGetReturnsMultiplyOperator() {
-        assertEquals(operatorSet.get("MULTIPLY"), new Multiply());
+        assertTrue(OperatorName.get("MULTIPLY") instanceof Multiply);
     }
 
     @Test
     public void testGetReturnsDivideOperator() {
-        assertEquals(operatorSet.get("DIVIDE"), new Divide());
+        assertTrue(OperatorName.get("DIVIDE") instanceof Divide);
     }
 
     @Test
     public void testGetReturnsIncrementOperator() {
-        assertEquals(operatorSet.get("INCREMENT"), new Increment());
+        assertTrue(OperatorName.get("INCREMENT") instanceof Increment);
     }
 
     @Test
     public void testGetReturnsApplyOperator() {
-        assertEquals(operatorSet.get("APPLY"), new Apply());
+        assertTrue(OperatorName.get("APPLY") instanceof Apply);
     }
 
     @Test
     public void testGetReturnsCaseInsensitive() {
-        assertEquals(operatorSet.get("aDd"), new Add());
+        assertTrue(OperatorName.get("aDd") instanceof Add);
     }
 
     @Test
     public void testGetThrowsException() {
         try {
-            operatorSet.get("test");
+            OperatorName.get("test");
             fail();
         } catch (UnsupportedOperationException ex) {
             //pass

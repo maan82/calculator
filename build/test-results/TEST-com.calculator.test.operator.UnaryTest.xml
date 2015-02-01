@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.calculator.test.operator.UnaryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-01-31T19:50:21" hostname="mc-s071130.local" time="0.0">
+<testsuite name="com.calculator.test.operator.UnaryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-02-01T19:07:01" hostname="mc-s071130.local" time="0.0010">
   <properties/>
   <testcase name="testGetRightHandSideOperand" classname="com.calculator.test.operator.UnaryTest" time="0.0"/>
   <testcase name="testOperateShouldDelegate" classname="com.calculator.test.operator.UnaryTest" time="0.0"/>

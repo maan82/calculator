@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.calculator.test.operator.ApplyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-01-31T19:50:21" hostname="mc-s071130.local" time="0.0">
+<testsuite name="com.calculator.test.operator.ApplyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-02-01T19:07:01" hostname="mc-s071130.local" time="0.0010">
   <properties/>
-  <testcase name="testOperateShouldReturnRightHandValue" classname="com.calculator.test.operator.ApplyTest" time="0.0"/>
+  <testcase name="testOperateShouldReturnRightHandValue" classname="com.calculator.test.operator.ApplyTest" time="0.0010"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

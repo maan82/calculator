@@ -1,26 +1,24 @@
 package com.calculator.test.operator;
 
+import java.math.BigDecimal;
 import java.util.List;
 
-public abstract class Binary extends NamedOperator implements Operator {
+public abstract class Binary implements Operator {
 
-    public Binary(String name) {
-        super(name);
-    }
 
-    public Double getLeftHandSideOperand(List<Double> operands) {
+    public BigDecimal getLeftHandSideOperand(List<BigDecimal> operands) {
         return operands.get(0);
     }
 
-    public Double getRightHandSideOperand(List<Double> operands) {
+    public BigDecimal getRightHandSideOperand(List<BigDecimal> operands) {
         return operands.get(1);
     }
 
     @Override
-    public Double operate(List<Double> operands) {
+    public BigDecimal operate(List<BigDecimal> operands) {
         return operate(getLeftHandSideOperand(operands), getRightHandSideOperand(operands));
     }
 
-    public abstract Double operate(Double left, Double right);
+    public abstract BigDecimal operate(BigDecimal left, BigDecimal right);
 
 }

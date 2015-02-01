@@ -1,15 +1,11 @@
 package com.calculator.test.operator;
 
+import java.math.BigDecimal;
+
 public class Multiply extends Binary implements Operator {
 
-    public static final String MULTIPLY = "MULTIPLY";
-
-    public Multiply() {
-        super(MULTIPLY);
-    }
-
     @Override
-    public Double operate(Double left, Double right) {
-        return left * right;
+    public BigDecimal operate(BigDecimal left, BigDecimal right) {
+        return left.multiply(right);
     }
 }

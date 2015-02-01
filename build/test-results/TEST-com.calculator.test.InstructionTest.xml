@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.calculator.test.InstructionTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-01-31T19:50:20" hostname="mc-s071130.local" time="0.505">
+<testsuite name="com.calculator.test.InstructionTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-02-01T19:07:01" hostname="mc-s071130.local" time="0.415">
   <properties/>
-  <testcase name="testExecuteShouldDelegateToOperator" classname="com.calculator.test.InstructionTest" time="0.502"/>
-  <testcase name="testIsApplyInstructionWhenApplyInstanceShouldReturnTrue" classname="com.calculator.test.InstructionTest" time="0.0"/>
+  <testcase name="testExecuteShouldDelegateToOperator" classname="com.calculator.test.InstructionTest" time="0.413"/>
+  <testcase name="testIsApplyInstructionWhenApplyInstanceShouldReturnTrue" classname="com.calculator.test.InstructionTest" time="0.0010"/>
   <testcase name="testIsApplyInstructionWhenOtherOperatorShouldReturnFalse" classname="com.calculator.test.InstructionTest" time="0.0010"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
